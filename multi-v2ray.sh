@@ -279,7 +279,6 @@ installFinish() {
     [[ ${INSTALL_WAY} == 0 ]] && WAY="install" || WAY="update"
     colorEcho  ${GREEN} "multi-v2ray ${WAY} success!\n"
 
-    clear
 
     v2ray info
 
