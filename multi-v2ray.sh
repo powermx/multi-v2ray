@@ -189,7 +189,7 @@ planUpdate(){
     OLD_CRONTAB=$(crontab -l)
     echo "SHELL=/bin/bash" >> crontab.txt
     echo "${OLD_CRONTAB}" >> crontab.txt
-	echo "0 ${LOCAL_TIME} * * * curl -O https://raw.githubusercontent.com/v2fly/fhs-install-v2ray/master/install-release.sh | chmod +x install-release.sh | bash install-release.sh | tee -a /root/v2rayUpdate.log && service v2ray restart" >> crontab.txt
+	echo "0 ${LOCAL_TIME} * * * curl -o v2.sh -L https://raw.githubusercontent.com/v2fly/fhs-install-v2ray/master/install-release.sh && bash v2.sh | tee -a /root/v2rayUpdate.log && service v2ray restart" >> crontab.txt
 	crontab crontab.txt
 	sleep 1
 	if [[ ${OS} == 'CentOS' || ${OS} == 'Fedora' ]];then
